@@ -1,0 +1,41 @@
+{
+  "name": "miletone",
+  "version": "0.0.0",
+  "description": "my dandy project",
+  "scripts": {
+    "start": "ts-node src/index.ts"
+  },
+  "repository": {
+    "url": "takanakahiko/miletone",
+    "type": "git"
+  },
+  "author": "takanakahiko<takanakahiko@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/parse-github-url": "^1.0.0",
+    "husky": "^2.4.0",
+    "lint-staged": "^8.2.0",
+    "prettier": "^1.18.2",
+    "ts-node": "^8.2.0",
+    "typescript": "^3.5.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "*.{json,md,ts,js}": [
+        "prettier --write",
+        "git add"
+      ]
+    }
+  },
+  "dependencies": {
+    "@octokit/rest": "^16.28.0",
+    "@types/node": "^12.0.8",
+    "enquirer": "^2.3.0",
+    "parse-github-url": "^1.0.2"
+  }
+}
